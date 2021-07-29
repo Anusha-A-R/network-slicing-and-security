@@ -1,0 +1,7 @@
+packets:1800
+bandwidth:10000000
+resources:1000000
+packet_size:1500
+no_of_clients_per_slice:500
+client_block:5
+      
