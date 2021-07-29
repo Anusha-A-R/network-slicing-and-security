@@ -1,0 +1,262 @@
+settings:
+  simulation_time: 20
+  num_clients: 10
+  ips: False
+  limit_closest_base_stations: 5
+  statistics_params:
+    warmup_ratio: 0.05
+    cooldown_ratio: 0.05
+    x:  
+      min: 0
+      max: 1980
+    y:
+      min: 0
+      max: 1980
+  logging: True
+  log_file: outputids10test.txt
+  plotting_params:
+    plotting: True
+    plot_save: True
+    plot_show: False
+    plot_file: outputids10test.png
+    plot_file_dpi: 1000
+    scatter_size: 15
+slices:
+  fast_moving:
+    delay_tolerance: 10
+    qos_class: 5
+    bandwidth_guaranteed: 1000000
+    bandwidth_max: 100000000
+    client_weight: 0.29
+    threshold: 0
+    usage_pattern:
+      distribution: randint
+      params:
+        - 4000000
+        - 800000000
+  slow_moving:
+    delay_tolerance: 10
+    qos_class: 2
+    bandwidth_guaranteed: 1000000
+    bandwidth_max: 10000000
+    client_weight: 0.30
+    threshold: 0
+    usage_pattern:
+      distribution: randint
+      params:
+        - 800000
+        - 8000000
+  iot_houses:
+    delay_tolerance: 10
+    qos_class: 1
+    bandwidth_guaranteed: 5000000
+    bandwidth_max: 10000000
+    client_weight: 0.31
+    threshold: 0
+    usage_pattern:
+      distribution: randint
+      params:
+        - 800
+        - 8000000
+  extra:
+    delay_tolerance: 10
+    qos_class: 1
+    bandwidth_guaranteed: 5000000
+    bandwidth_max: 10000000
+    client_weight: 0.10
+    threshold: 0
+    usage_pattern:
+      distribution: randint
+      params:
+        - 800
+        - 8000000
+base_stations:
+  - capacity_bandwidth: 20000000000
+    ip: 192.168.2.3
+    coverage: 224
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 100
+    y: 500
+  - capacity_bandwidth: 20000000000
+    ip: 192.168.2.1
+    coverage: 390
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1700
+    y: 750
+  - capacity_bandwidth: 20000000000
+    ip: 192.168.2.2
+    coverage: 550
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 500
+    y: 1600
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.5
+    coverage: 450
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 500
+    y: 500
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.6
+    coverage: 324
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 600
+    y: 1000
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.7
+    coverage: 324
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1700
+    y: 1500
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.8
+    coverage: 540
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 10
+    y: 1500
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.9
+    coverage: 540
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1500
+    y: 10
+  - capacity_bandwidth: 20000000000
+    ip: 1.1.1.10
+    coverage: 540
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1500
+    y: 1500
+  - capacity_bandwidth: 25000000000
+    ip: 1.1.1.11
+    coverage: 476
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1100
+    y: 1000
+  - capacity_bandwidth: 30000000000
+    ip: 1.1.1.12
+    coverage: 546
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 900
+    y: 1500
+  - capacity_bandwidth: 30000000000
+    ip: 1.1.1.13
+    coverage: 384
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1000
+    y: 20
+  - capacity_bandwidth: 25000000000
+    ip: 1.1.1.14
+    coverage: 348
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 930
+    y: 500
+  - capacity_bandwidth: 25000000000
+    ip: 1.1.1.15
+    coverage: 534
+    ratios:
+      fast_moving: 0.4
+      slow_moving: 0.2
+      iot_houses: 0.3
+      extra: 0.1
+    x: 1370
+    y: 157 
+mobility_patterns:
+  car:
+    distribution: normal
+    params:
+      - 10
+      - 70
+    client_weight: 0.30
+  truck:
+    distribution: normal
+    params:
+      - 10
+      - 60
+    client_weight: 0.20
+  cycle:
+    distribution: normal
+    params:
+      - 10
+      - 20
+    client_weight: 0.10
+  walk:
+    distribution: randint
+    params:
+      - 5
+      - 10
+    client_weight: 0.20
+  house:
+    distribution: randint
+    params:
+      - 0
+      - 1
+    client_weight: 0.20
+clients:
+  location:
+    x:
+      distribution: randint
+      params:
+        - 0
+        - 1980
+    y:
+      distribution: randint
+      params:
+        - 0
+        - 1980
+  usage_frequency:
+    distribution: randint
+    params:
+      - 0
+      - 100000
+    divide_scale: 1000000
